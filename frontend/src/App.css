@@ -1,0 +1,186 @@
+@font-face {
+    font-family: Bw Gradual DEMO;
+    src: url('./assets/font/BGD/BwGradualDEMO-Regular.otf');
+}
+@font-face {
+    font-family: Bw Gradual DEMO Bold;
+    src: url('./assets/font/BGD/BwGradualDEMO-Bold.otf');
+}
+@font-face {
+    font-family: Bw Gradual DEMO Extra Bold;
+    src: url('./assets/font/BGD/BwGradualDEMO-ExtraBold.otf');
+}
+  
+@font-face {
+    font-family: Roboto;
+    src: url('./assets/font/Roboto/Roboto-Regular.ttf');
+}
+      
+
+
+* {
+    font-family: Bw Gradual DEMO;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: ease-in-out 0.3s;
+}
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 8rem;
+    right: 3rem;
+    animation: fadeIn 700ms ease-in-out 1s both;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.scroll-to-top:hover {
+    box-shadow: 0 0 20px #eee !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+.App {
+    /* background: #6239F2; */
+    height: 100vh;
+}
+
+button {
+    transition: 0.5s;
+    font-family: Roboto;
+}
+
+button:hover {
+    box-shadow: 0 0 20px #eee !important;
+}
+
+.header#header {
+    /* height: 80px; */
+    /* position: fixed; */
+    left: 10%;
+    top: 0;
+}
+
+.header .header {
+    position: fixed;
+}
+
+.header .header a.n-link {
+    font-family: Bw Gradual DEMO;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(104, 59, 228, 0.57);
+    margin-left: 2em;
+    text-decoration: none;
+    cursor: pointer;
+}
+.header .header a.n-link:hover, .header .header a.n-link.active {
+    color: rgb(186, 111, 230);
+}
+
+.header .header .logout {
+    position: fixed;
+    right: 20%;
+}
+
+@media only screen and (max-width: 990px) {
+    .header .header .logout {
+        position: inherit;
+    }
+}
+
+.header button {
+    text-transform: none;
+    font-family: Roboto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 1em;
+    margin-top: 1rem;
+    border: 1px solid #FFFFFF;
+}
+
+.login {
+    padding-top: 10%;
+    height: 100%;
+}
+
+.login .input-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.login .forget-pwd {
+    text-align: right;
+}
+
+.admin {
+    padding-top: 5%;
+    height: 100%;
+}
+
+.admin .center {
+    margin-left: 25%;
+}
+
+.admin table.user-list thead th {
+    width: 14%;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.admin table.user-list tbody td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.profile {
+    padding-top: 3%;
+    height: 100%;
+}
+
+.profile .scoreboard {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.profile table thead th {
+    width: 11%;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.profile table tbody td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.signup {
+    padding-top: 3%;
+    height: 100%;
+}
