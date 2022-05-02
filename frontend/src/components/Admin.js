@@ -3,7 +3,8 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { serverUrl } from '../common';
-import { Paper, Container, Button, Grid, Table ,TableBody ,TableCell ,TableContainer ,TableHead ,TableRow } from '@mui/material';
+import { Link, Paper, Container, Button, Grid, Table ,TableBody ,TableCell ,TableContainer ,TableHead ,TableRow } from '@mui/material';
+import { Toolbar, makeStyles } from "@material-ui/core";
 
 function Admin() {
     const [userList, setUserList] = useState([]);
@@ -21,8 +22,42 @@ function Admin() {
         getUsers();
     }, []);
 
+    const useStyles = makeStyles((theme) => ({
+        navlinks: {
+          marginLeft: theme.spacing(10),
+          display: "flex",
+        },
+        link: {
+          color: "white",
+          fontSize: "20px",
+          cursor: "pointer",
+          float: 'right',
+          textDecoration: "none !important",
+          "&:hover": {
+            color: "#a9c3dd",
+          },
+        },
+    }));
+
+    const classes = useStyles();
+
+    const onLogout = () => {
+        window.localStorage.name = "";
+        window.localStorage.email = "";
+        window.location.href = "/";
+    }
+
     return (
         <Container className='admin' component="main" maxWidth="md">
+            <Toolbar>
+                <Container className={classes.navlinks}>
+                    <Link onClick={() =>{
+                        onLogout();
+                    }} className={classes.link}>
+                    LOG OUT
+                    </Link>
+                </Container>
+            </Toolbar>
             <Grid container>
                 <Grid item xs={2} >
                     <Button

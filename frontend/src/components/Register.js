@@ -28,7 +28,7 @@ function Register() {
             contact: formData.get('contact'),
             residential: formData.get('residential'),
             emergency: formData.get('emergency'),
-            pwd: formData.get('pwd'),
+            password: formData.get('pwd'),
         }
         console.log(data);
         if(formData.get('pwd') !== formData.get('retype_pwd')) {
@@ -39,7 +39,8 @@ function Register() {
         axios.post(serverUrl + "/add-user", data)
         .then((res)=>{
             // window.location.href = "/profile"
-
+            alert("User Register success!");
+            return;
         })
         .catch((err)=>{
 

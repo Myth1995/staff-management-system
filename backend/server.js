@@ -5,7 +5,6 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const User = require('./models/user.model');
-const Tournament = require('./models/tournament.model');
 const routes = express.Router();
 const PORT = 4000;
 
@@ -25,8 +24,28 @@ routes.route('/login').post(function(req, res) {
       console.log("login", err);
     }
     else {
+      console.log("pwd: ", user);
       if(user != null) {
-        res.json({"status": "success", user_name: user.user_name, email: user.email, hp_num: user.hp_num});
+        res.json({"status": "success", name: user.name, email: user.email});
+      }
+      else {
+        res.json({"status": "none"});
+      }
+    }
+  });
+});
+
+routes.route('/change-pwd').post(function(req, res) {
+  let email = req.body.email, password = req.body.password;
+  User.findOne({email: email}, function (err, user) {
+    if(err) {
+      console.log("change-pwd: ", err);
+    }
+    else {
+      if(user != null) {
+        user.password = password
+        user.save();
+        res.json({"status": "success"});
       }
       else {
         res.json({"status": "none"});

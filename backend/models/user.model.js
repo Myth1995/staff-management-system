@@ -28,6 +28,9 @@ let User = new Schema({
     },
     create_date: {
         type: Date
+    },
+    password: {
+        type: String
     }
 });
 module.exports = mongoose.model('User', User);

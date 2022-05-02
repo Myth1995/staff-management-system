@@ -6,6 +6,7 @@ import User from './components/User';
 import Register from './components/Register';
 import About from './components/About';
 import Contact from './components/Contact';
+import ChangePwd from './components/ChangePwd';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/register" element={<Register/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/change-pwd" element={<ChangePwd/>} />
         </Routes>
       </Router>
       <script src="./assets/js/bootstrap.bundle.min.js" type="text/javascript" />

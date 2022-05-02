@@ -8,11 +8,12 @@ import { Toolbar, makeStyles } from "@material-ui/core";
 
 function User() {
     const [userList, setUserList] = useState([]);
-
+    const [userName, setUserName] = useState("");
     useEffect(()=>{
         if(window.localStorage.email === "") {
             window.location.href = "/";
         }
+        setUserName(window.localStorage.name);
         async function getUsers() {
             await axios.get(serverUrl + "/get-users")
             .then((res)=>{
@@ -60,7 +61,7 @@ function User() {
                 </Container>
             </Toolbar>
             <Typography variant='h4'>
-                Welcome {window.localStorage.name}!
+                Welcome {userName}!
             </Typography>
             <Grid container>
                 <Grid item xs={2} >
@@ -79,6 +80,7 @@ function User() {
                         type="button"
                         fullWidth
                         variant="contained"
+                        href='/change-pwd'
                         >
                         Change Password
                     </Button>

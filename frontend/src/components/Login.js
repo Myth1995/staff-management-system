@@ -42,6 +42,7 @@ function Login() {
             axios.post(serverUrl + "/login", formData)
             .then((res)=>{
                 console.log(res);
+                debugger;
                 if(res.data.status === "success") {
                     window.localStorage.email = res.data.email;
                     window.localStorage.name = res.data.name;
@@ -86,7 +87,7 @@ function Login() {
                 <Typography variant="h4" onClick={()=>{
                     window.location.href = "/";
                 }} className={classes.logo}>
-                Navbar
+                Company Logo
                 </Typography>
                 <Container className={classes.navlinks}>
                     <Link href="/about" className={classes.link}>
@@ -152,15 +153,9 @@ function Login() {
                         Forgot password?
                         </Link>
                     </Grid>
-                    <Grid item>
-                        <Link href="/signup" variant="body2">
-                        {"Don't have an account? Sign Up"}
-                        </Link>
-                    </Grid>
                     </Grid>
                 </Box>
                 </Box>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
             </Container>
         </ThemeProvider>
     );
